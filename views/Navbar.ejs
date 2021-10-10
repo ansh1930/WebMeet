@@ -1,0 +1,71 @@
+    <!-- Navbar -->
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#Home">WebMeet</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active w3-button" aria-current="page" href="#Home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
+              </li>
+              <li class="nav-item">
+              </li>
+              <li class="nav-item">
+                <a href="#contact" class="w3-bar-item w3-button">CONTACT</a>
+              </li>
+            </ul>
+            <!-- <form method="GET" action="/auth/google" class="d-flex"> -->
+              <div class="btn-group">
+                <button type="button" class="btn" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                  <i class="far fa-user-circle fa-2x"></i>
+                </button>
+                <div class="border-dark dropdown-menu dropdown-menu-lg-end" style="width: 270px;">
+                  <% if(LoginedIn==true){
+                    %>
+                    <div class="card mb-3" style="max-width: 18rem;">
+                      <div class="card-body">
+                        <form class="row g-3">
+                          <div class="col-md-6">
+                            <label for="inputEmail4" class="form-label">Name</label>
+                            <input type="Name" class="form-control" id="login_name" readonly>
+                          </div>
+                          <div class="col-md-6">
+                            <label for="" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="login_email" readonly>
+                          </div>
+                          <div class="col-12">
+                            <a href="/logout" class="btn btn-outline-danger">Logout</a>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                    <%
+                  } else if(Loginout==true){
+                    
+                    %>
+                    <div class="card mb-3" style="max-width: 18rem;">
+                      <!-- <div class="card-header">Header</div> -->
+                      <div class="card-body text-primary">
+                        <a type="submit" href="/auth/google" class="btn btn-outline-primary"> <img src="/Images/google.svg" style="width: 32px;" alt=""> &nbsp; &nbsp; Sign In With Google</a>
+                      </div>
+                    </div>
+
+                    <%
+                  } %>
+
+
+                </div>
+              </div>
+            <!-- </form> -->
+          </div>
+        </div>
+      </nav>
+
+      <script>
+
+      </script>

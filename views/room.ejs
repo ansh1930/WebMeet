@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HOME</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="/css/custom.css" />
+  <link rel="stylesheet" href="/css/all.min.css" />
+  <!-- bootstrap css -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
+
+  <script>
+    const ROOM_ID = "<%= roomId %>";
+    const Username = "<%= Username %>";
+  </script>
+</head>
+
+<body>
+
+  <div class="container-fluid main">
+    <div class="row">
+      <div class="col-12" style="border: 1px solid black;">
+        <!-- <div class="main__videos"> -->
+        <div id="video-grid">
+          <!-- <label id='video_person_name'>YOU</label> -->
+        </div>
+        <!-- </div> -->
+      </div>
+    </div>
+  </div>
+
+
+  <footer class="footer">
+    <div class="container-fluid">
+
+  
+      <div class="row">
+        <div class="col order-last">
+          <div class="main__controls_button" id="muteButton" onclick="muteUnmute()">
+            <i class="fa fa-microphone fa-6x"></i>
+            <!-- <span>Mute</span> -->
+          </div>
+        </div>
+        <div class="col">
+          <div class="main__controls_button leaveMeeting" id="leave-meeting">
+            <!-- <i class="fa fa-times"></i> -->
+
+            <i class="fas fa-phone-slash" onclick="disconnect()"></i>
+            <!-- <span class="">Leave Meeting</span> -->
+          </div>
+        </div>
+        <div class="col">
+          <div class="main__controls_button" id="playPauseVideo" onclick="playStop()">
+            <i class="fa fa-video-camera"></i>
+            <!-- <span>Pause Video</span> -->
+          </div>
+        </div>
+        <div class="col order-first">
+          <div class="main__controls_button">
+            <%- include ('chat.ejs') %>
+              <!-- <i class="fa fa-comment fa-2x"></i> -->
+
+              <!-- <span>Chat</span> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </footer>
+
+</body>
+<script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/peerjs/1.3.1/peerjs.min.js.map"></script>
+<script src="/socket.io/socket.io.js"></script>
+
+<!-- bootstrap js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+<script src="/js/script.js"></script>
+
+</html>

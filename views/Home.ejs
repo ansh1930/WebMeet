@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/css/custom.css" />
+  <link rel="stylesheet" href="/css/all.min.css" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <title>WEB MEET</title>
+</head>
+<style>
+  body,
+  html {
+    height: 100%;
+    margin: 0;
+  }
+
+  .img_show {
+    background-image: url('Images/meet.jpg');
+    background-repeat: no-repeat;
+    min-width: 100%;
+    min-height: 100%;
+    background-size: cover;
+  }
+</style>
+
+<body>
+
+
+  <div class="container-fluid">
+
+    <!-- navbar -->
+    <%- include ('Navbar.ejs') %>
+
+      <div id="Home" class=" container-fluid">
+        <div class="row">
+          <div class="col-12 ">
+            <div class="row">
+              <div class="card bg-dark text-white">
+                <%- include('Alert.ejs') %>
+                  <img src="Images/meet.jpg" class="card-img" alt="...">
+                  <div class="card-img-overlay">
+                    <div class="row">
+
+                      <div class="col-md-6 position-absolute bottom-0 end-0 pb-5">
+                        <!-- Join a Meeting -->
+                        <!-- Button trigger modal -->
+                        <center>
+                          <!-- <button type="button" class="btn btn-primary mx-auto" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                          Join A Meeting
+                        </button> -->
+                        </center>
+                        <!-- Modal -->
+                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                          tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header" style="color: black;">
+                                <h5 class="modal-title" id="staticBackdropLabel">Join A Meeting</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                                  disabled></button>
+                              </div>
+                              <div class="modal-body">
+                                <form action="/validate" method="post">
+                                  <!-- <input type="text" name="join_meeting" class="form-control" id="join_meeting" required> -->
+                                  <div class="form-group">
+                                    <input type="text" autocomplete="off" placeholder="Please Write Your Room ID"
+                                      class="form-control" id="Join_meeting" name="Join_meeting">
+                                  </div>
+                                  <hr>
+                                  <!-- <div class="form-group"> -->
+                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                  <button type="submit" id='join_button' class="btn btn-primary">Join</button>
+                                  <!-- </div> -->
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 position-absolute bottom-0 start-0 py-5">
+                        <!-- Button trigger modal -->
+                        <center>
+                          <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#create_a_meet">
+                          Create a Meeting
+                        </button> -->
+                        </center>
+                        <!-- Modal -->
+                        <div class="modal fade" id="create_a_meet" data-bs-backdrop="static" data-bs-keyboard="false"
+                          tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel" style="color: black;">Create A Meeting
+                                </h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                  aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body">
+                                <form action="/add_id" method="post">
+                                  <!-- <fieldset disabled> -->
+                                  <div class="container-fluid">
+                                    <div class="row">
+                                      <div class="col-10">
+
+                                        <input type='text' class="form-control" readonly name="create_meeting"
+                                          id="create_meeting" />
+                                      </div>
+                                      <div class="col-2">
+                                        <i class="fas fa-sync mt-2"></i>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="col-12">
+
+                                      <label id="" name='' style="color: black;">Please click on Join to start the
+                                        Room</label>
+                                    </div>
+                                  </div>
+                                  <!-- </fieldset> -->
+                                  <hr>
+                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                  <button type="submit" class="btn btn-primary">Join</button>
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+              </div>
+              </img>
+            </div>
+
+            <div class="row mt-2 mb-2 mx-auto">
+              <div class="col-md-6 mb-1">
+                <div class="card border-info" style="width: 18rem;">
+                  <img
+                    src="https://s3.eu-west-2.amazonaws.com/media.nigelwright.com/video+conferencing+software+big+image.jpg"
+                    class="card-img-top" alt="...">
+                  <div class="card-body mx-auto">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                      data-bs-target="#create_a_meet">
+                      Create a Meeting
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 ">
+                <div class="card border-warning" style="width: 18rem;">
+                  <img
+                    src="https://img.freepik.com/free-vector/video-conferencing-home-man-having-video-call-meeting-with-clients-home_218660-9.jpg?size=626&ext=jpg"
+                    class="card-img-top" alt="...">
+                  <div class="card-body mx-auto">
+                    <button type="button" class="btn btn-primary mx-auto" data-bs-toggle="modal"
+                      data-bs-target="#staticBackdrop">
+                      Join A Meeting
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <!-- About Section -->
+            <div class="w3-container w3-padding-32" id="about">
+              <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">About</h3>
+              <p>Due to covid time with the help of this app we can interact with each other non physically. Which help
+                in
+                decreasing covid cases due physical contact. Person can meet and chat online with help of this app.
+              </p>
+            </div>
+
+
+
+            <!-- Contact Section -->
+            <div class="w3-container w3-padding-32" id="contact">
+              <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Contact</h3>
+              <p>Lets know about your expresion.</p>
+              <div class="w3-row w3-padding-32">
+                <div class="w3-col m6 w3-large w3-margin-bottom">
+                  <i class="fa fa-map-marker" style="width:30px"></i> MUMBAI <br>
+                  <i class="fa fa-phone" style="width:30px"></i> Phone: <br>
+                  <i class="fa fa-envelope" style="width:30px"> </i> Email:THAKUR@mail.com<br>
+                </div>
+                <div class="w3-col m6">
+                  <form action="/contact" method="POST" target="_blank">
+                    <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+                      <div class="w3-half">
+                        <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+                      </div>
+                      <div class="w3-half">
+                        <input class="w3-input w3-border" type="email" placeholder="Email" required name="Email">
+                      </div>
+                    </div>
+                    <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
+                    <button class="w3-button w3-black w3-section w3-right" type="submit">SEND</button>
+                  </form>
+                </div>
+              </div>
+
+
+
+
+              <!-- End page content -->
+            </div>
+
+
+            <!-- Footer -->
+
+            <footer class="w3-center w3-blue w3-padding-64">
+
+              <a href="#Home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the
+                top</a>
+              <div>
+                <div class="w3-xlarge w3-section">
+                  <i class="fa fa-facebook-official w3-hover-opacity"></i>
+                  <i class="fa fa-instagram w3-hover-opacity"></i>
+                  <i class="fa fa-snapchat w3-hover-opacity"></i>
+                  <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+                  <i class="fa fa-twitter w3-hover-opacity"></i>
+                  <i class="fa fa-linkedin w3-hover-opacity"></i>
+                </div>
+              </div>
+              <p>Powered by <a href="https://www.timsrmumbai.in/" title="" target="_blank"
+                  class="w3-hover-text-green">Thakur
+                  Institute of Management Studies & Reaseach </a></p>
+            </footer>
+          </div>
+        </div>
+      </div>
+
+
+  </div>
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+    crossorigin="anonymous"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+    -->
+  <script defer>
+    const genrate_ID = "<%= generate_id %>";
+    console.log(genrate_ID)
+    let create_meeting = document.getElementById('create_meeting')
+    create_meeting.value = genrate_ID;
+    create_meeting.innerHTML = genrate_ID;
+    create_meeting.innerText = genrate_ID;
+    const login_name = document.getElementById('login_name')
+    const login_email = document.getElementById('login_email')
+    var dis_name = "<%= Name %>";
+    var dis_email = "<%= Email %>";
+    login_name.value = dis_name;
+    login_email.value = dis_email;
+  </script>
+  <script src="/js/client.js"></script>
+
+</body>
+
+</html>
